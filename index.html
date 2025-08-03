@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfólio Pessoal</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Pedro Vinícius</h1>
+        <p>Desenvolvedor de Software | Python | Web</p>
+    </header>
+
+    <section>
+        <h2>Sobre Mim</h2>
+        <p>
+            Olá! Meu nome é Pedro Vinícius. Sou desenvolvedor de software com experiência em Python,
+            desenvolvimento web e automação. Apaixonado por tecnologia e sempre buscando novos desafios.
+        </p>
+    </section>
+
+    <section>
+        <h2>Projetos</h2>
+        <div class="projetos">
+            {% for projeto in projetos %}
+                <div class="projeto">
+                    <h3>{{ projeto.titulo }}</h3>
+                    <p>{{ projeto.descricao }}</p>
+                    <a href="{{ projeto.link }}" target="_blank">Ver mais</a>
+                </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section>
+        <h2>Contato</h2>
+        <p>Email: <a href="mailto:pedroviniciussm2@gmail.com">pedroviniciussm2@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/vincsdf" target="_blank">www.linkedin.com/in/vincsdf</a></p>
+        <p>GitHub: <a href="https://github.com/pedroviniciussm2" target="_blank">github.com/pedroviniciussm2</a></p>
+    </section>
+
+    <footer>
+        &copy; {{ ano }} Pedro Vinícius. Todos os direitos reservados.
+    </footer>
+</body>
+</html>
